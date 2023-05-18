@@ -21,14 +21,20 @@ Decidí incluir al objeto "Vehiculo" dentro de Player_Objects pues habrá probab
 - Los movimientos del vehículo horizontales y atrás y adelante son independientes uno del otro, así como del estado de las llantas
 - El freno y el movimiento hacia atrás deben ser programados de manera separada, puesto que puedes frenar y mover hacia adelante o hacia atrás. El freno es una restricción del movimiento fwd/bwd del vehículo
 
+## Aprendizaje
+
+- Aprendí a configurar el entorno en Unity
+- Soy capaz de generar documentación con estándares
+- Aprendí a dar física de colisión a objetos con ajustes predeterminados de Unity como "weight"
+
 ## Checklist
 
-  - [x] Screenshot del layout seleccionado y una justificación de por que lo seleccionaste.
-  - [] Reflexión sobre el aprendizaje adquirido en el laboratorio del 01/11/2022 con fecha de realización.
-  - [X] Screenshot de tu layout de color en el play mode.
-  - [X] Lista de errores que hasta el momento existen en el juego.
-  - [] Código documentado de la clase **FollowPlayer**.
-  - [] Reflexión sobre el aprendizaje adquirido en el laboratorio del 02/11/2022 con fecha de realización.
-  - [] Listado con explicación y screenshots de los prefabs de obstáculos que hayas realizado.
-  - [] Liga al video con el resultado final de tu proyecto y el nivel diseñado.
-  - [] Reflexión sobre el aprendizaje adquirido en el laboratorio del 03/11/2022 con fecha de realización.
+- [x] Screenshot del layout seleccionado y una justificación de por que lo seleccionaste.
+- [] Reflexión sobre el aprendizaje adquirido en el laboratorio del 01/11/2022 con fecha de realización.
+- [X] Screenshot de tu layout de color en el play mode.
+- [X] Lista de errores que hasta el momento existen en el juego.
+- [X] Código documentado de la clase **FollowPlayer**.
+- [] Reflexión sobre el aprendizaje adquirido en el laboratorio del 02/11/2022 con fecha de realización.
+- [] Listado con explicación y screenshots de los prefabs de obstáculos que hayas realizado.
+- [] Liga al video con el resultado final de tu proyecto y el nivel diseñado.
+- [] Reflexión sobre el aprendizaje adquirido en el laboratorio del 03/11/2022 con fecha de realización.
