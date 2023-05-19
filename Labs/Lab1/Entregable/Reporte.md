@@ -13,6 +13,16 @@ Agregué un con un tinte azul/cyan que no ataque a mis ojos pero que permita ver
 
 Decidí incluir al objeto "Vehiculo" dentro de Player_Objects pues habrá probablemente otras partes que pueda controlar del mismo vehículo
 
+## Obstáculos
+
+Los obstáculos fueron ordenados así para remarcar la necesidad de control minuto del movimiento adelante y rotación, dadas las restricciones del diseño del automóvil.
+
+[Layout](layout.png)
+
+La jerarquía de objetos se determinó con el propósito de agrupar de manera sencilla para los desarrolladores. El CursoObstaculos tiene 7 pirámides que a su vez se componen de objeto de obstáculos.
+
+[Organizaciónn de jerarquía](jerarquia.png)
+
 ## Errores
 
 - El movimiento del vehículo está determinado como un bloque sin tomar en cuenta ninguna de sus partes
@@ -26,6 +36,8 @@ Decidí incluir al objeto "Vehiculo" dentro de Player_Objects pues habrá probab
 - Aprendí a configurar el entorno en Unity
 - Soy capaz de generar documentación con estándares
 - Aprendí a dar física de colisión a objetos con ajustes predeterminados de Unity como "weight"
+- Aprendí a generar scripts de comportamiento para los objetos
+- Aprendí a organizar los objetos en la vista jerárquica
 
 ## Checklist
 
@@ -38,3 +50,4 @@ Decidí incluir al objeto "Vehiculo" dentro de Player_Objects pues habrá probab
 - [] Listado con explicación y screenshots de los prefabs de obstáculos que hayas realizado.
 - [] Liga al video con el resultado final de tu proyecto y el nivel diseñado.
 - [] Reflexión sobre el aprendizaje adquirido en el laboratorio del 03/11/2022 con fecha de realización.
+
