@@ -2158,7 +2158,6 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
-  - component: {fileID: 534669906}
   - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Main Camera
@@ -2233,18 +2232,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!114 &534669906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67d2766c80eb9542b45f4bd9d02639a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4146,7 +4133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   timer: 0.3
-  turnSpeed: 30
+  turnSpeed: 40
   horizontalInput: 0
   forwardInput: 0
   playerPoints: 0
@@ -6339,7 +6326,6 @@ GameObject:
   - component: {fileID: 1462254007}
   - component: {fileID: 1462254011}
   - component: {fileID: 1462254010}
-  - component: {fileID: 1462254009}
   - component: {fileID: 1462254008}
   m_Layer: 0
   m_Name: P1 Main Camera
@@ -6376,18 +6362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 988066331}
---- !u!114 &1462254009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462254006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67d2766c80eb9542b45f4bd9d02639a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1462254010
 AudioListener:
   m_ObjectHideFlags: 0

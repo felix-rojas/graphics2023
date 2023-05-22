@@ -31,6 +31,7 @@ La jerarquía de objetos se determinó con el propósito de agrupar de manera se
 - Los movimientos del vehículo horizontales y atrás y adelante son independientes uno del otro, así como del estado de las llantas
 - El freno y el movimiento hacia atrás deben ser programados de manera separada, puesto que puedes frenar y mover hacia adelante o hacia atrás.
 - El freno es una restricción del movimiento fwd/bwd del vehículo
+- El vehículo acelera y rota incluso cuando las llantas están en el aire
 
 ## Aprendizaje
 
@@ -47,11 +48,23 @@ La jerarquía de objetos se determinó con el propósito de agrupar de manera se
 
 En el resultado final, regresé a la versión con 1 jugador, puesto que quería hacer una experiencia diferente.
 
+- El prefab de piramides lo junté en ObstacleCourse
+- El vehiculo del jugador esta en Player
+- Los vehículos enemigos están organizados en EnemyVehicles y todos siguen el comportamiento "FollowWaypoint"
+- Waypoint as un objeto vacío que duplica la posición del Vehiculo1 de Player
+- Vehiculo1 posee detección de colisión con objetos y acumula puntos entre más cajas toques
+
 ### Cambios
 
 - Condiciones para perder en consola:
   - Caer de la carretera y Valor del eje Z del vehículo <= -10
   - Colisionar con autobuses
+- Condiciones para ganar:
+  - Alcanzar 50 unidades de distancia
+
+### Video
+
+[Gameplay_y_comentario](https://youtu.be/S1Yf7rn_CpQ)
 
 ## Checklist
 
@@ -61,7 +74,6 @@ En el resultado final, regresé a la versión con 1 jugador, puesto que quería 
 - [X] Lista de errores que hasta el momento existen en el juego.
 - [X] Código documentado de la clase **FollowPlayer**.
 - [x] Reflexión sobre el aprendizaje adquirido en el laboratorio del 02/11/2022 con fecha de realización.
-- [] Listado con explicación y screenshots de los prefabs de obstáculos que hayas realizado.
-- [] Liga al video con el resultado final de tu proyecto y el nivel diseñado.
-- [] Reflexión sobre el aprendizaje adquirido en el laboratorio del 03/11/2022 con fecha de realización.
-
+- [X] Listado con explicación y screenshots de los prefabs de obstáculos que hayas realizado.
+- [X] Liga al video con el resultado final de tu proyecto y el nivel diseñado.
+- [X] Reflexión sobre el aprendizaje adquirido en el laboratorio del 03/11/2022 con fecha de realización.
