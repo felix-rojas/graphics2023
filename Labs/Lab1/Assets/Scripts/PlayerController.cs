@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 {
     /// Movement vars for players
     public float speed = 5.0f;
+    public float timer = 0.1f;
     public float turnSpeed = 0.0f;
     public float horizontalInput;
     public float forwardInput;
@@ -28,6 +29,9 @@ public class PlayerController : MonoBehaviour
     /// InputKey for Player to switch camera
     public KeyCode switchKey; 
     /// </summary>
+    
+    /// generate a waypoint to follow player
+    public GameObject wayPoint;
 
     /// <summary>
     /// This method is called before the first frame update
@@ -58,5 +62,24 @@ public class PlayerController : MonoBehaviour
             mainCamera.enabled = !mainCamera.enabled;
             hoodCamera.enabled = !hoodCamera.enabled;
         }
+
+        if(timer > 0)
+        {
+             timer -= Time.deltaTime;
+        }
+        if(timer <= 0)
+        {
+             //The position of the waypoint will update to the player's position
+             UpdatePosition();
+             timer = 0.1f;
+        }
+    }
+        /// <summary>
+        /// This method is called on every update to follow the player every <c>timer</c> seconds
+        /// </summary>
+        void UpdatePosition()
+    {
+        //The wayPoint's position will now be the player's current position.
+         wayPoint.transform.position = transform.position;
     }
 }
