@@ -7,23 +7,26 @@ public class FollowWaypoint : MonoBehaviour {
     public GameObject target;
 
     // Angular speed in radians per sec.
-    public float speed = 1.0f;
+    public float speed;
+    public float rotationSpeed;
 
-    void LateUpdate()
+    void Update()
     {
         // target the wayPoint
-        target = GameObject.Find("wayPoint");
+        target = GameObject.Find("Vehiculo1");
 
         // Determine which direction to rotate towards
         Vector3 targetDirection = target.transform.position - transform.position;
 
         // The step size is equal to speed times frame time.
-        float singleStep = speed * Time.deltaTime;
+        float rotationSpeed = speed * Time.deltaTime;
 
         // Rotate the forward vector towards the target direction by one step
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed, 0.0f);
 
         // Calculate a rotation a step closer to the target and applies rotation to this object
         transform.rotation = Quaternion.LookRotation(newDirection);
+
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }

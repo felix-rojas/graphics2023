@@ -18,7 +18,10 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 0.0f;
     public float horizontalInput;
     public float forwardInput;
-    
+
+    public int playerPoints = 0;
+    public bool GameOver = false;
+
     /// Multiplayer Vars
     public string inputId;
 
@@ -73,6 +76,10 @@ public class PlayerController : MonoBehaviour
              UpdatePosition();
              timer = 0.1f;
         }
+
+        if (transform.position[0] >= 50 && !GameOver){
+            Debug.Log("You win with score: " + playerPoints);
+        }
     }
         /// <summary>
         /// This method is called on every update to follow the player every <c>timer</c> seconds
@@ -81,5 +88,30 @@ public class PlayerController : MonoBehaviour
     {
         //The wayPoint's position will now be the player's current position.
          wayPoint.transform.position = transform.position;
+    }
+
+
+    void OnCollisionExit(Collision collisionInfo)
+    {
+        if (collisionInfo.transform.name.StartsWith("Road") && transform.position[2] <= -10)
+        {
+            GameOver = true;
+            Debug.Log("GameOver, fell off");
+        }
+    }
+    void OnCollisionEnter(Collision collisionInfo)
+    {
+
+        if (collisionInfo.transform.name.StartsWith ("Obstaculo"))
+        {
+            playerPoints += 1 ;
+            Debug.Log("Extra points, crashed with: " + collisionInfo.transform.name);
+        }
+
+        if (collisionInfo.transform.name.StartsWith ("Veh_Bus_Blue"))
+        {
+            GameOver = true;
+            Debug.Log("GameOver, crashed with: " + collisionInfo.transform.name);
+        }
     }
 }
