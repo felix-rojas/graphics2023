@@ -10,9 +10,12 @@ using UnityEngine.Networking;
 
 public class WebClient : MonoBehaviour
 {
+    /// Movement vars for players
+    Vector3 currentPos;
     public float speed = 5.0f;
-    Vector3 fakePos = new Vector3(3.44f, 0, -15.707f);
-    
+    public float turnSpeed = 0.0f;
+    public float horizontalInput;
+    public float forwardInput;
     // IEnumerator - yield return
     IEnumerator SendData(string data)
     {
@@ -47,15 +50,23 @@ public class WebClient : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string json = EditorJsonUtility.ToJson(fakePos);
+        currentPos = new Vector3(1.0f, 1.0f, 1.0f);
         //StartCoroutine(SendData(call));
-        StartCoroutine(SendData(json));
         // transform.localPosition
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = fakePos;
+        currentPos = transform.position;
+        /// Get user input to turn
+        horizontalInput = Input.GetAxis("Horizontal");
+        /// Get user input to move
+        forwardInput = Input.GetAxis("Vertical");
+        /// Translate to fwd and bwd movement
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        
+        string json = EditorJsonUtility.ToJson(currentPos);
+        StartCoroutine(SendData(json));
     }
 }
