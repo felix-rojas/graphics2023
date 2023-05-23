@@ -58,15 +58,9 @@ public class WebClient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentPos = transform.position;
-        /// Get user input to turn
-        horizontalInput = Input.GetAxis("Horizontal");
-        /// Get user input to move
-        forwardInput = Input.GetAxis("Vertical");
         /// Translate to fwd and bwd movement
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-        
         string json = EditorJsonUtility.ToJson(currentPos);
         StartCoroutine(SendData(json));
+        transform.position = Vector3.MoveTowards(transform.position,);
     }
 }

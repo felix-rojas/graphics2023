@@ -10,23 +10,22 @@ using UnityEngine.Networking;
 
 public class AgentClient : MonoBehaviour
 {
-    Vector3 agentPosition;
-    public void GetAgentData() {
+    public float agentSpeed = 1.0f;
+    public Vector3 GetAgentData() {
         Agent a = AgentAPIHelper.GetData();
-        agentPosition = new Vector3(a.x, 
-                                    a.y,
-                                    a.z);
+        return new Vector3(a.x,a.y,a.z);
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = agentPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
+        var step =  agentSpeed * Time.deltaTime; // calculate distance to move
+        transform.position = Vector3.MoveTowards(transform.position, GetAgentData(), step);
     }
 }
