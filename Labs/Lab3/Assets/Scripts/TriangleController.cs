@@ -6,6 +6,8 @@ public class Triangle : MonoBehaviour
 {
     public float horizontalInput;
     public float forwardInput;
+    public float speed;
+    public float turnSpeed;
     public void OnEnable()
     {
         TimeManager.OnMinuteChanged += TimeCheck;
@@ -45,7 +47,7 @@ public class Triangle : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+        transform.Translate(Vector3.right * Time.deltaTime *   turnSpeed * horizontalInput);
     }
 }
 
