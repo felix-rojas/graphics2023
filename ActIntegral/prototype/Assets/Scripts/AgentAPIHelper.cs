@@ -6,7 +6,7 @@ public static class AgentAPIHelper
 {
     public static Agent GetData()
     {
-        HttpWebRequest request = (HttpWebRequest) WebRequest.Create("localhost:8585/");
+        HttpWebRequest request = (HttpWebRequest) WebRequest.Create("localhost:8585");
 
         HttpWebResponse response = (HttpWebResponse) request.GetResponse();
 

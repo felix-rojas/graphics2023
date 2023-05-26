@@ -19,9 +19,9 @@ class Server(BaseHTTPRequestHandler):
         # self.wfile.write("GET request for {}".format(self.path).encode('utf-8'))
         
         position = {
-            "x" : 1.0,
-            "y" : 1.1,
-            "z" : 1.1
+            "x" : 12.0,
+            "y" : 12.1,
+            "z" : 12.1
         }
 
         self.wfile.write(str(position).encode('utf-8'))

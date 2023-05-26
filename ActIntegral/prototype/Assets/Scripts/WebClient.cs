@@ -12,10 +12,14 @@ public class WebClient : MonoBehaviour
 {
     /// Movement vars for players
     Vector3 currentPos;
+    Vector3 newPos;
     public float speed = 5.0f;
     public float turnSpeed = 0.0f;
     public float horizontalInput;
     public float forwardInput;
+
+
+
     // IEnumerator - yield return
     IEnumerator SendData(string data)
     {
@@ -41,9 +45,9 @@ public class WebClient : MonoBehaviour
                 Vector3 tPos = JsonUtility.FromJson<Vector3>(www.downloadHandler.text.Replace('\'', '\"'));
                 //Debug.Log("Form upload complete!");
                 Debug.Log(tPos);
+                newPos = tPos;
             }
         }
-
     }
 
 
@@ -51,16 +55,18 @@ public class WebClient : MonoBehaviour
     void Start()
     {
         currentPos = new Vector3(1.0f, 1.0f, 1.0f);
-        //StartCoroutine(SendData(call));
+        // StartCoroutine(SendData(call));
         // transform.localPosition
     }
 
     // Update is called once per frame
     void Update()
     {
-        /// Translate to fwd and bwd movement
-        string json = EditorJsonUtility.ToJson(currentPos);
+        var step =  speed * Time.deltaTime; 
+        string json = EditorJsonUtility.ToJson(transform.position);
+
         StartCoroutine(SendData(json));
-        transform.position = Vector3.MoveTowards(transform.position,);
+
+        transform.position = Vector3.MoveTowards(transform.position, newPos, step);
     }
 }
